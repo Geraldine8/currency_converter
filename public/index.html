@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <script type="text/javascript" src="./js/bundle.js"></script>
+    <link rel="stylesheet" type="text/css "href="css/style.css"/>
+  </head>
+  <body>
+
+    <div id="app">
+      <h3>Currency Converter</h3>
+      <!-- <br> -->
+      <span>Enter amount:</span>
+
+      <input type="number" placeholder="amount" v-model="amount"/>
+      <br>
+      <span>Convert from:</span>
+      <select id="from" v-model="fromCurrency">
+        <option selected disabled>Select Currency</option>
+        <option v-for="(rate, index) in rates" v-bind:value="rate">{{index}}</option>
+      </select>
+      
+      <span>Convert to:</span>
+      <select id="to" v-model="toCurrency">
+        <option selected disabled>Select Currency</option>
+        <option v-for="(rate, index) in rates" v-bind:value="rate">{{index}}</option>
+      </select>
+      <a>Total: {{convertCurrency}}</a>
+      <br>
+    </div>
+  </body>
+</html>
